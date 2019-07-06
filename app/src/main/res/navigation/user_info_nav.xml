@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/user_info_nav"
+    app:startDestination="@id/destination_account">
+
+    <fragment
+        android:id="@+id/destination_account"
+        android:name="com.example.bukisavings.AddAccountFragment"
+        android:label="fragment_add_account"
+        tools:layout="@layout/fragment_add_account" >
+        <action android:id="@+id/action_destination_account_to_destination_account_info"
+                app:destination="@id/destination_account_info"/>
+    </fragment>
+    <fragment android:id="@+id/destination_user_info" android:name="com.example.bukisavings.UserInfo"
+              android:label="fragment_user_info" tools:layout="@layout/fragment_user_info"/>
+    <fragment android:id="@+id/destination_account_info" android:name="com.example.bukisavings.AccountInfo"
+              android:label="fragment_account_info" tools:layout="@layout/fragment_account_info">
+        <argument android:name="accountId" app:argType="long" android:defaultValue="0L"/>
+    </fragment>
+</navigation>

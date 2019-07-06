@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/destination_login">
+    <fragment
+        android:id="@+id/destination_login"
+        android:name="com.example.bukisavings.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/action_destination_login_to_destination_registro"
+            app:destination="@id/destination_registro"
+            app:popUpTo="@+id/destination_login" />
+        <action android:id="@+id/next_action" app:destination="@id/destination_home"/>
+    </fragment>
+    <fragment
+        android:id="@+id/destination_registro"
+        android:name="com.example.bukisavings.RegistroFragment"
+        android:label="fragment_registro"
+        tools:layout="@layout/fragment_registro" />
+    <activity android:id="@+id/destination_home" android:name="com.example.bukisavings.HomeActivity"
+              android:label="activity_home" tools:layout="@layout/activity_home">
+        <argument android:name="userId" app:argType="long" android:defaultValue="0L"/>
+    </activity>
+</navigation>
